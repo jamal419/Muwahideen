@@ -1,0 +1,288 @@
+Website 
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Al Muwahideen Society</title>
+  <meta name="description" content="Al Muwahideen Society — Community, prayer, learning, and service." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#8fd3c7; /* soft turquoise */
+      --muted:#9aa6b2;
+      --txt:#f8fafc;
+      --radius:12px;
+      --maxwidth:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      background:linear-gradient(180deg,var(--bg) 0%, #07101a 100%);
+      color:var(--txt);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+    .wrap{max-width:var(--maxwidth);margin:32px auto;padding:24px;}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#114b46,#1b6b65);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:20px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.45);
+    }
+    nav{display:flex;gap:12px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}
+    nav a:hover{background:rgba(255,255,255,0.03);color:var(--txt)}
+    .hero{
+      display:grid;grid-template-columns:1fr 420px;gap:28px;margin-top:22px;align-items:center;
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);padding:20px;box-shadow:0 8px 30px rgba(2,6,23,0.6);
+    }
+    h1{margin:0 0 8px 0;font-size:28px;letter-spacing:-0.4px}
+    p.lead{color:var(--muted);margin:0 0 12px 0}
+    .cta{
+      display:inline-block;background:var(--accent);color:#04201b;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700;
+      box-shadow:0 6px 18px rgba(51,97,92,0.16);
+    }
+
+    /* Events & features */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+    .feature{padding:14px;border-radius:10px;background:linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00))}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* Join form */
+    form{display:grid;gap:10px}
+    input, textarea, select{
+      width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);
+      background:transparent;color:var(--txt);outline:none;font-size:15px;
+    }
+    .row{display:flex;gap:10px}
+    .row .col{flex:1}
+    button.primary{
+      background:var(--accent);border:none;padding:12px 16px;border-radius:10px;font-weight:700;cursor:pointer;
+    }
+
+    footer{margin-top:28px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    a.ghost{color:var(--muted);text-decoration:none}
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      .grid{grid-template-columns:1fr}
+      nav{display:none}
+      header{align-items:flex-start;flex-direction:column;gap:10px}
+    }
+    /* subtle focus states */
+    input:focus, textarea:focus, button:focus, a:focus{box-shadow:0 0 0 4px rgba(143,211,199,0.12)}
+  </style>
+</head>
+<body>
+  <main class="wrap" role="main">
+    <header>
+      <div class="brand" aria-label="Al Muwahideen Society">
+        <div class="logo" aria-hidden="true">AM</div>
+        <div>
+          <div style="font-weight:700">Al Muwahideen Society</div>
+          <div style="font-size:13px;color:var(--muted)">Community • Prayer • Learning • Service</div>
+        </div>
+      </div>
+
+      <nav aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#events">Events</a>
+        <a href="#join">Join</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section id="home" class="hero" aria-labelledby="hero-heading">
+      <div class="card" style="padding:28px;">
+        <h1 id="hero-heading">Welcome to Al Muwahideen Society</h1>
+        <p class="lead">A welcoming community for worship, learning, and uplifting service. Join our weekly gatherings, study circles, and community outreach programs.</p>
+        <p><strong>Next Jumu'ah:</strong> Friday, <span id="next-jumuah-date">—</span></p>
+        <div style="margin-top:12px">
+          <a class="cta" href="#join">Become a member</a>
+          <a class="ghost" style="margin-left:12px" href="#events">See events →</a>
+        </div>
+
+        <div class="grid" style="margin-top:18px">
+          <div class="feature">
+            <div style="font-weight:700">Prayer & Worship</div>
+            <div class="small">Weekly congregational prayers and spiritual gatherings.</div>
+          </div>
+          <div class="feature">
+            <div style="font-weight:700">Learning Circles</div>
+            <div class="small">Quran study, Arabic basics, and Islamic knowledge sessions.</div>
+          </div>
+          <div class="feature">
+            <div style="font-weight:700">Community Service</div>
+            <div class="small">Outreach, charity drives, and local support efforts.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column: upcoming events / contact quick card -->
+      <aside class="card" aria-labelledby="events-heading">
+        <h3 id="events-heading">Upcoming Events</h3>
+        <ul id="events-list" style="padding-left:16px;margin-top:8px">
+          <!-- JS will populate -->
+        </ul>
+        <hr style="opacity:.06;margin:14px 0" />
+        <div>
+          <strong>Contact</strong>
+          <p class="small" style="margin:6px 0">Phone: (419) 231-7926<br/>Email: <a href="mailto:info@example.org" style="color:var(--accent)">info@example.org</a></p>
+          <p class="small">Follow us on social media for updates.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about" class="card" style="margin-top:18px;">
+      <h2 style="margin-top:0">About</h2>
+      <p class="small">Al Muwahideen Society is a community organization focused on supporting faith, strengthening family ties, and serving the broader community. We welcome people of all backgrounds and emphasize learning, unity, and practical action.</p>
+    </section>
+
+    <section id="events" style="margin-top:18px;">
+      <div class="card">
+        <h2 style="margin-top:0">Events & Programs</h2>
+        <div style="display:grid;gap:12px;margin-top:10px">
+          <div class="card feature" style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-weight:700">Weekly Quran Study</div>
+              <div class="small">Tuesdays • 7:00 PM — 8:30 PM</div>
+            </div>
+            <div class="small">Community hall</div>
+          </div>
+
+          <div class="card feature" style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-weight:700">Youth Program</div>
+              <div class="small">Saturdays • 4:00 PM</div>
+            </div>
+            <div class="small">Youth center</div>
+          </div>
+
+          <div class="card feature" style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-weight:700">Monthly Community Service</div>
+              <div class="small">2nd Sunday • Volunteer opportunities</div>
+            </div>
+            <div class="small">Rotating locations</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="join" class="card" style="margin-top:18px;">
+      <h2 style="margin-top:0">Join / Membership</h2>
+      <p class="small">Fill the short form below to join or to be on our mailing list.</p>
+
+      <form id="join-form" novalidate>
+        <div class="row">
+          <div class="col"><input id="name" name="name" placeholder="Full name" required></div>
+          <div class="col"><input id="phone" name="phone" placeholder="Phone (e.g. (419) 231-7926)"></div>
+        </div>
+        <input id="email" name="email" type="email" placeholder="Email address" required>
+        <select id="interest" name="interest" aria-label="Area of interest">
+          <option value="">I'm interested in...</option>
+          <option value="prayer">Prayer & Worship</option>
+          <option value="study">Study & Learning</option>
+          <option value="youth">Youth Programs</option>
+          <option value="service">Community Service</option>
+        </select>
+        <textarea id="notes" name="notes" rows="3" placeholder="Message or notes (optional)"></textarea>
+
+        <div style="display:flex;gap:10px;align-items:center;margin-top:6px">
+          <button type="submit" class="primary">Send membership request</button>
+          <button type="button" id="download-pdf" style="background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:8px;color:var(--muted);">Download membership form (PDF)</button>
+        </div>
+
+        <div id="form-msg" style="margin-top:10px;color:var(--accent);display:none"></div>
+      </form>
+    </section>
+
+    <section id="contact" class="card" style="margin-top:18px;">
+      <h2 style="margin-top:0">Contact</h2>
+      <p class="small">Prefer direct email? <a href="mailto:info@example.org" style="color:var(--accent)">info@example.org</a></p>
+      <address class="small" style="line-height:1.6">Al Muwahideen Society<br/>City, State — Mailing address here</address>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Al Muwahideen Society</div>
+      <div>Designed with care • <a class="ghost" href="#contact">Get in touch</a></div>
+    </footer>
+  </main>
+
+  <script>
+    // Basic JS: populate next jumu'ah (calculate next Friday)
+    function nextFridayDateString(){
+      const today = new Date();
+      const day = today.getDay(); // 0 Sun .. 5 Fri .. 6 Sat
+      const daysUntilFriday = (5 - day + 7) % 7 || 7; // next Friday — if today is Friday show next Friday (change to 0 if want today)
+      const next = new Date(today.getTime() + daysUntilFriday * 24*60*60*1000);
+      const opts = {weekday:'long', month:'long', day:'numeric', year:'numeric'};
+      return next.toLocaleDateString(undefined, opts);
+    }
+    document.getElementById('next-jumuah-date').textContent = nextFridayDateString();
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // populate events list
+    const events = [
+      {title:'Jumu\'ah Prayer', when: nextFridayDateString(), where: 'Main hall'},
+      {title:'Quran Study (Tues.)', when: 'Tuesdays • 7:00 PM', where: 'Community Room'},
+      {title:'Youth Program', when: 'Saturdays • 4:00 PM', where: 'Youth Center'},
+    ];
+    const el = document.getElementById('events-list');
+    events.forEach(e=>{
+      const li = document.createElement('li');
+      li.textContent = `${e.title} — ${e.when} (${e.where})`;
+      el.appendChild(li);
+    });
+
+    // small form handler (client-only): open mailto with form data
+    const form = document.getElementById('join-form');
+    const msg = document.getElementById('form-msg');
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      if(!name || !email){
+        msg.style.display='block'; msg.textContent='Please provide name and email.'; return;
+      }
+      const phone = document.getElementById('phone').value.trim();
+      const interest = document.getElementById('interest').value;
+      const notes = document.getElementById('notes').value.trim();
+
+      const subject = encodeURIComponent('Membership request — ' + name);
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nInterest: ${interest}\nNotes: ${notes}\n\nSent from website.`
+      );
+      // use mailto for now
+      window.location.href = `mailto:info@example.org?subject=${subject}&body=${body}`;
+      msg.style.display='block'; msg.textContent='Opening email client...';
+    });
+
+    // PDF download placeholder: opens example membership PDF link (replace with real file)
+    document.getElementById('download-pdf').addEventListener('click', () => {
+      // replace href with your real PDF when available
+      const pdfUrl = 'membership-form.pdf';
+      // If file isn't found, browser will 404 — replace with hosted file or generate server-side.
+      window.open(pdfUrl, '_blank');
+    });
+
+    // Accessibility: skip to main (if you add skip link later)
+  </script>
+</body>
+</html>
